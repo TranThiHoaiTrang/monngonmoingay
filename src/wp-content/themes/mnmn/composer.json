@@ -1,0 +1,28 @@
+{
+	"name": "wordpress/ehd",
+	"description": "EHD Wordpress Theme",
+	"authors": [
+		{
+			"name": "WEBHD Team"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"EHD\\Blocks\\": "inc/Blocks",
+			"EHD\\Plugins\\": "inc/Plugins",
+			"EHD\\PostTypes\\": "inc/PostTypes",
+			"EHD\\Themes\\": "inc/Themes",
+			"EHD\\Widgets\\": "inc/Widgets"
+		},
+		"files": [
+			"inc/Plugins/Tgmpa/tgmpa-config.php",
+			"inc/helpers.php",
+			"inc/themes.php",
+			"inc/ajax.php",
+			"inc/css-output.php"
+		]
+	},
+	"require": {
+		"php": ">=8.2"
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"name": "plugins/ehd-core",
+	"description": "eHD core plugin",
+	"authors": [
+		{
+			"name": "WEBHD Team"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"EHD_Cores\\": "src/Cores",
+			"EHD_Libs\\": "src/Libs",
+			"EHD_Plugins\\": "src/Plugins",
+			"EHD_Themes\\": "src/Themes",
+			"EHD_Walkers\\": "src/Walkers",
+			"EHD_Widgets\\": "src/Widgets"
+		},
+		"files": [
+			"src/helpers.php"
+		]
+	},
+	"require": {
+		"php": ">=8.2",
+		"symfony/var-dumper": "^v7.0.2",
+		"matthiasmullie/minify": "^1.3.71",
+		"mobiledetect/mobiledetectlib": "4.8.05",
+		"vectorface/whip": "^v0.5.0",
+		"deliciousbrains/wp-background-processing": "^1.1.1",
+		"phpgangsta/googleauthenticator": "dev-master",
+		"pragmarx/recovery": "^v0.2.1",
+		"guzzlehttp/guzzle": "^7.7.1"
+	}
+}

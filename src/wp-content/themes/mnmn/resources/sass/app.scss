@@ -1,0 +1,20 @@
+@import "layout";
+
+/** demo */
+.layout-demo {
+    .cell {}
+    .cell-1 {
+        @include grid-self( 2, 1, span 3, 2 );
+    }
+    .cell-2 {}
+    .cell-3 {}
+    .cell-4 {}
+    .cell-5 {}
+    .cell-6 {}
+    .cell-7 {}
+    .cell-8 {}
+    .cell-9 {}
+    .cell-10 {}
+    .cell-11 {}
+    .cell-12 {}
+}
