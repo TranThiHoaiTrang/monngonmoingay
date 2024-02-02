@@ -1,0 +1,14 @@
+.cookingfornutritionneeds__item {
+  box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    box-shadow: 0px 4px 32px 0px rgba(236, 32, 40, 0.16);
+  }
+}
+
+.cookingfornutritionneeds__slider {
+  // add margin to the slider
+  .slick-slide {
+    margin: 0 20px;
+  }
+}

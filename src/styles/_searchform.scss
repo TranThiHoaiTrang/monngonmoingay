@@ -1,0 +1,15 @@
+.searchform {
+  width: 622px;
+  border: 6px solid rgba(251, 208, 210, 0.5);
+  box-shadow: 0px 8px 24px 0px rgba(236, 32, 40, 0.08);
+  margin-top: -18px;
+  input {
+    line-height: 30px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+.advanced-search {
+  box-shadow: 0px 8px 72px 0px rgba(0, 0, 0, 0.08);
+}

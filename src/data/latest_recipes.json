@@ -1,0 +1,49 @@
+{
+  "latestRecipes": [
+    {
+      "id": "latest-1",
+      "image": "/images/recipes/1.png",
+      "title": "Cải Ngổng trộn gà xé"
+    },
+    {
+      "id": "latest-2",
+      "image": "/images/recipes/2.png",
+      "title": "Bao Tử Khìa nước dừa"
+    },
+    {
+      "id": "latest-3",
+      "image": "/images/recipes/3.png",
+      "title": "Bao Tử Khìa nước dừa"
+    },
+    {
+      "id": "latest-4",
+      "image": "/images/recipes/1.png",
+      "title": "Cải Ngổng trộn gà xé"
+    },
+    {
+      "id": "latest-5",
+      "image": "/images/recipes/2.png",
+      "title": "Bao Tử Khìa nước dừa"
+    },
+    {
+      "id": "latest-6",
+      "image": "/images/recipes/3.png",
+      "title": "Bao Tử Khìa nước dừa"
+    },
+    {
+      "id": "latest-7",
+      "image": "/images/recipes/1.png",
+      "title": "Cải Ngổng trộn gà xé"
+    },
+    {
+      "id": "latest-8",
+      "image": "/images/recipes/2.png",
+      "title": "Bao Tử Khìa nước dừa"
+    },
+    {
+      "id": "latest-9",
+      "image": "/images/recipes/3.png",
+      "title": "Bao Tử Khìa nước dừa"
+    }
+  ]
+}

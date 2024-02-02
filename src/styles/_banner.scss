@@ -1,0 +1,12 @@
+.banner-slider {
+  &__content {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0) 51.83%
+    );
+    p {
+      max-width: 365px;
+    }
+  }
+}

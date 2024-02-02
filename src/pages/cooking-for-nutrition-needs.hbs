@@ -1,0 +1,30 @@
+{{#extend 'layouts/main.hbs'}}
+{{#content 'body'}}
+{{> "components/banner.hbs"}}
+
+<div class="container flex flex-col gap-10 mb-20">
+  <h2 class="title">
+    <strong>Cooking For</strong> Nutrition Needs
+  </h2>
+  <div class="flex m-auto justify-between w-full">
+    {{#each cookingForNutritionNeedItems as |item|}}
+    <a href="#">
+      <div
+        class="cookingfornutritionneeds__item group w-[240px] flex flex-col justify-end py-2 px-3 gap-6 self-stretch bg-white rounded-2xl relative aspect-square border border-solid border-transparent hover:border-[#fbd0d2]">
+        <img src="{{item.image}}" alt="nutrition needs image"
+          class="object-cover rounded-[20px] h-[211px] self-stretch" />
+        <h3 class="text-center text-sm font-bold capitalize px-2 h-10 group-hover:text-[var(--Primary-02)]">
+          {{item.title}}
+        </h3>
+      </div>
+    </a>
+    {{/each}}
+  </div>
+</div>
+
+{{#each cookingForNutritionNeedArticles as |item|}}
+{{> "components/cooking_for_nutrition_needs_articles.hbs" articles=item.articles title=item.title}}
+{{/each}}
+
+{{/content}}
+{{/extend}}

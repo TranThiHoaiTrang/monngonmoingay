@@ -1,0 +1,39 @@
+<div id="search"
+  class="searchform p-3 rounded-xl bg-white m-auto relative flex flex-col items-center gap-4 mb-10 group">
+  <h2 class="lobster text-2xl">10.000+ Recipes From Chef...</h2>
+  <form class="w-full flex gap-4 items-center justify-between" action="/tim-kiem-mon-ngon/">
+    <label for="searchinput" class="sr-only">Search</label>
+    <div class="relative w-full">
+      <div class="absolute inset-y-0 start-0 flex items-center ps-4 pointer-events-none">
+        <span class="icon-[ph--magnifying-glass] text-[var(--Gray-02)] text-xl"></span>
+      </div>
+      <input type="text" id="searchinput"
+        class="text-[var(--Gray-02)] text-base border-none rounded-lg block w-full ps-12 pe-14 p-2 bg-[var(--Gray-03)] hover:ring-1 hover:ring-[var(--Primary-03)] focus:ring-1 focus:ring-[var(--Primary-02)] focus:ring-offset-0 focus:ring-offset-transparent focus:outline-none group-has-[.advanced]:ring-1 group-has-[.advanced]:ring-[var(--Primary-02)]"
+        placeholder="Search 10.000+ ...">
+      <button type="button"
+        class="advanced-btn absolute inset-y-2 end-2 flex items-center p-2 border-l border-gray-300 group-has-[.advanced]:border-none group-has-[.advanced]:rounded-md group-has-[.advanced]:bg-[var(--Primary-03)]">
+        <span class="icon-[ph--sliders-fill] text-[var(--Primary-02)] group-has-[.advanced]:hidden"></span>
+        <span class="icon-[ph--x-bold] text-[var(--Primary-02)] hidden group-has-[.advanced]:inline-flex"></span>
+      </button>
+      <div id="accordion-advanced-search" data-active-classes="bg-white text-[var(--Primary-02)]"
+        data-inactive-classes="text-[var(--Gray-01)]"
+        class="advanced-search visible opacity-0 transition-all fixed h-screen lg:h-auto lg:absolute inset-x-0 top-0 lg-top-16 bg-white rounded-2xl p-4 pr-0 z-10 pointer-events-none group-has-[.advanced]:opacity-100 group-has-[.advanced]:pointer-events-auto">
+        {{!-- Close button --}}
+        <div class="flex justify-end px-3">
+          <button type="button" class="advanced-btn flex items-center p-2">
+            <span class="icon-[ph--x] text-xl"></span>
+          </button>
+        </div>
+        <div
+          class="advanced-search-inner flex flex-col gap-4 max-h-[calc(100vh_-_66px)] lg:max-h-[45vh] scrollbox pr-2 mr-2">
+          {{#each advancedSeach as |item|}}
+          {{> "components/advanced_group.hbs" item=item}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-search">
+      <img src="/images/icons/right-bold.svg" class="w-8 h-8 aspect-square" />
+    </button>
+  </form>
+</div>

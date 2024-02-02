@@ -1,0 +1,12 @@
+{
+  "banners": [
+    {
+      "image": "/images/banners/1.png",
+      "mobile": "/images/banners/1-mb.png"
+    },
+    {
+      "image": "/images/banners/2.png",
+      "mobile": "/images/banners/2-mb.png"
+    }
+  ]
+}

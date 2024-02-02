@@ -1,0 +1,18 @@
+.mostpopular__recipes {
+  width: 776px;
+  &__item {
+    width: 136px;
+    box-shadow: 0px 4px 16px 0px rgba(236, 32, 40, 0.08);
+    img {
+      box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.24);
+    }
+    > span {
+      background: linear-gradient(0deg, #242427 0%, #242427 100%),
+        lightgray -6.779px -5.7px / 117.403% 117.403% no-repeat;
+    }
+    &:hover {
+      box-shadow: 0px 4px 16px 0px rgba(236, 32, 40, 0.16);
+      border: 1px solid #fbd0d2;
+    }
+  }
+}

@@ -1,0 +1,204 @@
+// utilities classes
+
+.condensed {
+  font-variation-settings: 'wdth' 75;
+}
+
+.lobster {
+  font-family: 'Lobster', cursive;
+}
+
+// Title
+
+.title {
+  @apply text-5xl font-extrabold text-center capitalize;
+  @extend .condensed;
+  strong {
+    @apply text-[var(--Primary-02)];
+  }
+}
+
+// Button
+
+.btn {
+  @apply inline-flex py-3 px-5 items-center gap-2 rounded-lg border-2 font-bold text-nowrap leading-5 transition-all;
+  border-color: rgba(255, 255, 255, 0.2);
+
+  .icon {
+    @apply w-5 h-5 text-xl;
+  }
+
+  &-primary {
+    @apply bg-[var(--Primary-02)] text-white;
+
+    &.btn-default {
+      @apply bg-[var(--Primary-03)] text-[var(--Primary-02)];
+    }
+
+    &:hover {
+      box-shadow: 0px 8px 24px 0px rgba(236, 32, 40, 0.32);
+    }
+
+    // Text button
+    &.btn-text {
+      @apply bg-transparent text-[var(--Primary-02)] border-0;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &-secondary {
+    @apply bg-[var(--Gray-01)] text-white;
+
+    &.btn-default {
+      @apply bg-[var(--Gray-03)] text-[var(--Gray-02)];
+    }
+
+    &:hover {
+      box-shadow: 0px 8px 24px 0px rgba(10, 10, 10, 0.4);
+    }
+
+    // Text button
+    &.btn-text {
+      @apply bg-transparent text-[var(--Gray-02)] border-0;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &-small {
+    @apply text-sm py-2 px-5;
+    .icon {
+      @apply w-4 h-4 text-base;
+    }
+  }
+  &-icon {
+    @apply p-3 rounded-full;
+    .icon {
+      @apply w-6 h-6 text-2xl;
+    }
+  }
+
+  // Disabled
+  &-disabled,
+  &.slick-disabled {
+    @apply opacity-30 cursor-not-allowed;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  // Special case for login / sign up
+  &-login {
+    @apply text-sm py-2;
+    border: 1px solid rgba(236, 32, 40, 0.2);
+  }
+  // Special case for search btn
+  &-search {
+    @apply text-sm py-2 px-4 border;
+  }
+}
+
+// Tags
+
+.tags {
+  @apply flex gap-2 flex-wrap;
+}
+.tag {
+  @apply flex items-center gap-2 border border-[var(--Gray-03)] rounded-lg py-1 px-2 text-sm bg-[var(--Gray-04)];
+  .icon {
+    @apply w-5 h-5 text-xl text-[var(--Primary-02)];
+  }
+  &.tag-banner {
+    @apply text-white py-2 px-4;
+    background: rgba(255, 255, 255, 0.2);
+    .icon {
+      @apply text-white;
+    }
+  }
+  &-small {
+    @apply text-xs py-1 px-2;
+    .icon {
+      @apply w-4 h-4 text-sm;
+    }
+  }
+}
+
+// Tabs
+
+.tabs {
+  @apply flex gap-3 flex-wrap max-w-full;
+}
+.tab {
+  @apply inline-flex items-center gap-2 rounded-lg text-sm border border-[var(--Gray-03)] bg-white capitalize;
+  a {
+    @apply inline-flex py-2 px-4 h-full items-center;
+  }
+  .icon {
+    @apply w-5 h-5 text-xl;
+  }
+  &:hover {
+    @apply border-[var(--Primary-03)] bg-[var(--Primary-04)];
+  }
+  &-active {
+    @apply text-white bg-[var(--Primary-02)] font-bold;
+    &:hover {
+      @apply text-white bg-[var(--Primary-02)] font-bold;
+    }
+  }
+}
+
+// Arrow button
+.btn-arrow {
+  @apply w-12 h-12 absolute top-1/2;
+}
+.btn-prev {
+  @apply left-[-71px];
+}
+.btn-next {
+  @apply right-[-71px];
+}
+
+// Divid[er
+.divider {
+  @apply container mx-auto my-20;
+  background: url(/images/divider.png) no-repeat center center;
+  height: 78px;
+  mix-blend-mode: luminosity;
+}
+
+.scrollbox {
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+}
+.scrollbox:hover {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+@media (hover: none) {
+  .scrollbox {
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}

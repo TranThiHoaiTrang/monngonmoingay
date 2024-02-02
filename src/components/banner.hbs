@@ -1,0 +1,8 @@
+<section id="banner" class="container mt-4 relatives z-20">
+  <div class="banner-slider lg:rounded-xl overflow-hidden w-full aspect-auto lg:aspect-[1280/320]">
+    {{#each banners as |banner|}}
+    {{> "components/banner_item.hbs" banner=banner}}
+    {{/each}}
+  </div>
+  {{> "components/searchform.hbs" }}
+</section>

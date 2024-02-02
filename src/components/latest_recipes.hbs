@@ -1,0 +1,35 @@
+<div class="container flex flex-col px-4 lg:px-0">
+  <h2 class="title">Our Latest <strong>Recipes</strong></h2>
+  <div class="flex mt-10 gap-12 justify-between">
+    <div class="tabs">
+      <div class="tab tab-active">
+        <a href="#">Seasonal menu/ Suggest dishes</a>
+      </div>
+      <div class="tab">
+        <a href="#">By ingredients</a>
+      </div>
+      <div class="tab">
+        <a href="#">by region</a>
+      </div>
+      <div class="tab">
+        <a href="#">by country</a>
+      </div>
+      <div class="tab">
+        <a href="#">How to cook</a>
+      </div>
+    </div>
+    <a href="#" class="btn btn-secondary !hidden lg:flex">
+      <span>See 20.000+ Recipes</span>
+      <span class="icon icon-[fe--arrow-right]"></span>
+    </a>
+  </div>
+  {{!--slider slider-1-4 group1-4 --}}
+  {{> "components/recipes.hbs" items=latestRecipes class="slider slider-3 flex-wrap flex-col
+  lg:flex-row"}}
+  <div class="flex justify-center my-6">
+    <a href="#" class="btn btn-secondary btn-small">
+      <span>See 20.000+ Recipes</span>
+      <span class="icon icon-[fe--arrow-right]"></span>
+    </a>
+  </div>
+</div>
