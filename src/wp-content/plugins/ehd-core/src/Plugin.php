@@ -18,12 +18,12 @@ use EHD_Plugins\RankMath;
 use EHD_Plugins\WooCommerce\WooCommerce;
 use EHD_Plugins\WpRocket;
 
-//use EHD_Widgets\DropdownSearch_Widget;
-//use EHD_Widgets\offCanvas_Widget;
-//use EHD_Widgets\Posts_Widget;
-//use EHD_Widgets\PostsCarousel_Widget;
-//use EHD_Widgets\RecentPosts_Widget;
-//use EHD_Widgets\Search_Widget;
+use EHD_Widgets\DropdownSearch_Widget;
+use EHD_Widgets\offCanvas_Widget;
+use EHD_Widgets\Posts_Widget;
+use EHD_Widgets\PostsCarousel_Widget;
+use EHD_Widgets\RecentPosts_Widget;
+use EHD_Widgets\Search_Widget;
 
 \defined( 'ABSPATH' ) || die;
 
@@ -40,16 +40,6 @@ final class Plugin {
 
 		add_action( 'plugins_loaded', [ &$this, 'plugins_loaded' ], 10 );
 		add_action( 'wp_enqueue_scripts', [ &$this, 'enqueue' ], 11 );
-	}
-
-	/**
-	 * Load localization file
-	 *
-	 * @return void
-	 */
-	public function i18n(): void {
-		load_plugin_textdomain( EHD_PLUGIN_TEXT_DOMAIN );
-		load_plugin_textdomain( EHD_PLUGIN_TEXT_DOMAIN, false, EHD_PLUGIN_PATH . 'languages' );
 	}
 
 	/**
@@ -126,14 +116,24 @@ final class Plugin {
 	 * @return void
 	 */
 	public function register_widgets(): void {
-//		class_exists( offCanvas_Widget::class ) && register_widget( new offCanvas_Widget() );
-//
-//		class_exists( Search_Widget::class ) && register_widget( new Search_Widget() );
-//		class_exists( DropdownSearch_Widget::class ) && register_widget( new DropdownSearch_Widget() );
-//
-//		class_exists( RecentPosts_Widget::class ) && register_widget( new RecentPosts_Widget() );
-//		class_exists( Posts_Widget::class ) && register_widget( new Posts_Widget() );
-//		class_exists( PostsCarousel_Widget::class ) && register_widget( new PostsCarousel_Widget() );
+		class_exists( offCanvas_Widget::class ) && register_widget( new offCanvas_Widget() );
+
+		class_exists( Search_Widget::class ) && register_widget( new Search_Widget() );
+		class_exists( DropdownSearch_Widget::class ) && register_widget( new DropdownSearch_Widget() );
+
+		class_exists( RecentPosts_Widget::class ) && register_widget( new RecentPosts_Widget() );
+		class_exists( Posts_Widget::class ) && register_widget( new Posts_Widget() );
+		class_exists( PostsCarousel_Widget::class ) && register_widget( new PostsCarousel_Widget() );
+	}
+
+	/**
+	 * Load localization file
+	 *
+	 * @return void
+	 */
+	public function i18n(): void {
+		load_plugin_textdomain( EHD_PLUGIN_TEXT_DOMAIN );
+		load_plugin_textdomain( EHD_PLUGIN_TEXT_DOMAIN, false, EHD_PLUGIN_PATH . 'languages' );
 	}
 
 	/**

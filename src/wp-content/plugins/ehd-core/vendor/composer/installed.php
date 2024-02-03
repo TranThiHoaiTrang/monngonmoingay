@@ -1,217 +1,214 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'plugins/ehd-core',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '3fa417eb6053da0d7e4893604ddc10af61bd99e9',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => 'bfef42776f0b6ee82e71d3cba38e0dbf60f3f4c5',
-    'name' => 'plugins/ehd-core',
-  ),
-  'versions' => 
-  array (
-    'deliciousbrains/wp-background-processing' => 
-    array (
-      'pretty_version' => '1.2',
-      'version' => '1.2.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a0018fea79b8e752f41b6a26d6b9b3397d15c52e',
+    'versions' => array(
+        'deliciousbrains/wp-background-processing' => array(
+            'pretty_version' => '1.2',
+            'version' => '1.2.0.0',
+            'reference' => 'a0018fea79b8e752f41b6a26d6b9b3397d15c52e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../deliciousbrains/wp-background-processing',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'guzzlehttp/guzzle' => array(
+            'pretty_version' => '7.8.1',
+            'version' => '7.8.1.0',
+            'reference' => '41042bc7ab002487b876a0683fc8dce04ddce104',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/guzzle',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'guzzlehttp/promises' => array(
+            'pretty_version' => '2.0.2',
+            'version' => '2.0.2.0',
+            'reference' => 'bbff78d96034045e58e13dedd6ad91b5d1253223',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/promises',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'guzzlehttp/psr7' => array(
+            'pretty_version' => '2.6.2',
+            'version' => '2.6.2.0',
+            'reference' => '45b30f99ac27b5ca93cb4831afe16285f57b8221',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/psr7',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'matthiasmullie/minify' => array(
+            'pretty_version' => '1.3.71',
+            'version' => '1.3.71.0',
+            'reference' => 'ae42a47d7fecc1fbb7277b2f2d84c37a33edc3b1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../matthiasmullie/minify',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'matthiasmullie/path-converter' => array(
+            'pretty_version' => '1.1.3',
+            'version' => '1.1.3.0',
+            'reference' => 'e7d13b2c7e2f2268e1424aaed02085518afa02d9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../matthiasmullie/path-converter',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'mobiledetect/mobiledetectlib' => array(
+            'pretty_version' => '4.8.04',
+            'version' => '4.8.04.0',
+            'reference' => 'b73a5bdbcec74a6d33389cc8fe3a5af5d0965d01',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mobiledetect/mobiledetectlib',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpgangsta/googleauthenticator' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '505c2af8337b559b33557f37cda38e5f843f3768',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpgangsta/googleauthenticator',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'plugins/ehd-core' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '3fa417eb6053da0d7e4893604ddc10af61bd99e9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'pragmarx/random' => array(
+            'pretty_version' => 'v0.2.2',
+            'version' => '0.2.2.0',
+            'reference' => 'daf08a189c5d2d40d1a827db46364d3a741a51b7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pragmarx/random',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'pragmarx/recovery' => array(
+            'pretty_version' => 'v0.2.1',
+            'version' => '0.2.1.0',
+            'reference' => 'b5ce4082f059afac6761714a84497816f45271cc',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pragmarx/recovery',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-client' => array(
+            'pretty_version' => '1.0.3',
+            'version' => '1.0.3.0',
+            'reference' => 'bb5906edc1c324c9a05aa0873d40117941e5fa90',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-client',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'psr/http-factory' => array(
+            'pretty_version' => '1.0.2',
+            'version' => '1.0.2.0',
+            'reference' => 'e616d01114759c4c489f93b099585439f795fe35',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-factory',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-factory-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'psr/http-message' => array(
+            'pretty_version' => '1.1',
+            'version' => '1.1.0.0',
+            'reference' => 'cb6ce4845ce34a8ad9e68117c10ee90a29919eba',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-message',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-message-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'psr/simple-cache' => array(
+            'pretty_version' => '3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => '764e0b3939f5ca87cb904f570ef9be2d78a07865',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/simple-cache',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'ralouphie/getallheaders' => array(
+            'pretty_version' => '3.0.3',
+            'version' => '3.0.3.0',
+            'reference' => '120b605dfeb996808c31b6477290a714d356e822',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ralouphie/getallheaders',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/deprecation-contracts' => array(
+            'pretty_version' => 'v3.4.0',
+            'version' => '3.4.0.0',
+            'reference' => '7c3aff79d10325257a001fcf92d991f24fc967cf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-mbstring' => array(
+            'pretty_version' => 'v1.28.0',
+            'version' => '1.28.0.0',
+            'reference' => '42292d99c55abe617799667f454222c54c60e229',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/var-dumper' => array(
+            'pretty_version' => 'v7.0.2',
+            'version' => '7.0.2.0',
+            'reference' => '5f6f1a527002068f6d40fda068399220eabebf71',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/var-dumper',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'vectorface/whip' => array(
+            'pretty_version' => 'v0.4.0',
+            'version' => '0.4.0.0',
+            'reference' => 'daa06bad325cff3fca5b870a5f167173ac88f4ad',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../vectorface/whip',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'guzzlehttp/guzzle' => 
-    array (
-      'pretty_version' => '7.8.1',
-      'version' => '7.8.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '41042bc7ab002487b876a0683fc8dce04ddce104',
-    ),
-    'guzzlehttp/promises' => 
-    array (
-      'pretty_version' => '2.0.2',
-      'version' => '2.0.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'bbff78d96034045e58e13dedd6ad91b5d1253223',
-    ),
-    'guzzlehttp/psr7' => 
-    array (
-      'pretty_version' => '2.6.2',
-      'version' => '2.6.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '45b30f99ac27b5ca93cb4831afe16285f57b8221',
-    ),
-    'matthiasmullie/minify' => 
-    array (
-      'pretty_version' => '1.3.71',
-      'version' => '1.3.71.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ae42a47d7fecc1fbb7277b2f2d84c37a33edc3b1',
-    ),
-    'matthiasmullie/path-converter' => 
-    array (
-      'pretty_version' => '1.1.3',
-      'version' => '1.1.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'e7d13b2c7e2f2268e1424aaed02085518afa02d9',
-    ),
-    'mobiledetect/mobiledetectlib' => 
-    array (
-      'pretty_version' => '4.8.05',
-      'version' => '4.8.05.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b7a8cdd70955ea6162269939914ba97fe36a154a',
-    ),
-    'phpgangsta/googleauthenticator' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-        0 => '9999999-dev',
-      ),
-      'reference' => '505c2af8337b559b33557f37cda38e5f843f3768',
-    ),
-    'plugins/ehd-core' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'bfef42776f0b6ee82e71d3cba38e0dbf60f3f4c5',
-    ),
-    'pragmarx/random' => 
-    array (
-      'pretty_version' => 'v0.2.2',
-      'version' => '0.2.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'daf08a189c5d2d40d1a827db46364d3a741a51b7',
-    ),
-    'pragmarx/recovery' => 
-    array (
-      'pretty_version' => 'v0.2.1',
-      'version' => '0.2.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b5ce4082f059afac6761714a84497816f45271cc',
-    ),
-    'psr/http-client' => 
-    array (
-      'pretty_version' => '1.0.3',
-      'version' => '1.0.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'bb5906edc1c324c9a05aa0873d40117941e5fa90',
-    ),
-    'psr/http-client-implementation' => 
-    array (
-      'provided' => 
-      array (
-        0 => '1.0',
-      ),
-    ),
-    'psr/http-factory' => 
-    array (
-      'pretty_version' => '1.0.2',
-      'version' => '1.0.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'e616d01114759c4c489f93b099585439f795fe35',
-    ),
-    'psr/http-factory-implementation' => 
-    array (
-      'provided' => 
-      array (
-        0 => '1.0',
-      ),
-    ),
-    'psr/http-message' => 
-    array (
-      'pretty_version' => '2.0',
-      'version' => '2.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '402d35bcb92c70c026d1a6a9883f06b2ead23d71',
-    ),
-    'psr/http-message-implementation' => 
-    array (
-      'provided' => 
-      array (
-        0 => '1.0',
-      ),
-    ),
-    'psr/simple-cache' => 
-    array (
-      'pretty_version' => '3.0.0',
-      'version' => '3.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '764e0b3939f5ca87cb904f570ef9be2d78a07865',
-    ),
-    'ralouphie/getallheaders' => 
-    array (
-      'pretty_version' => '3.0.3',
-      'version' => '3.0.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '120b605dfeb996808c31b6477290a714d356e822',
-    ),
-    'symfony/deprecation-contracts' => 
-    array (
-      'pretty_version' => 'v3.4.0',
-      'version' => '3.4.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '7c3aff79d10325257a001fcf92d991f24fc967cf',
-    ),
-    'symfony/polyfill-mbstring' => 
-    array (
-      'pretty_version' => 'v1.28.0',
-      'version' => '1.28.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '42292d99c55abe617799667f454222c54c60e229',
-    ),
-    'symfony/var-dumper' => 
-    array (
-      'pretty_version' => 'v7.0.3',
-      'version' => '7.0.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a7a061abbf6fe3d4a79032cbc5149a4d65a10234',
-    ),
-    'vectorface/whip' => 
-    array (
-      'pretty_version' => 'v0.5.0',
-      'version' => '0.5.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0d0f4648cfb29777f0ae9f2dc6a3853e16674f78',
-    ),
-  ),
 );

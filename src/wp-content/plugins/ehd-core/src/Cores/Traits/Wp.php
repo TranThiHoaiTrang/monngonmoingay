@@ -301,7 +301,7 @@ trait Wp {
 
 	/**
 	 * @param string $mod_name
-	 * @param false|mixed $default
+	 * @param mixed $default
 	 *
 	 * @return false|mixed
 	 */
@@ -737,8 +737,6 @@ trait Wp {
 				return $term;
 			}
 		}
-
-		//...
 
 		// Default, first category
 		if ( is_array( $post_terms ) ) {

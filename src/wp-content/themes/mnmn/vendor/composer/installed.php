@@ -1,24 +1,23 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'wordpress/ehd',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'aa0f3856d8e1cb793e987e711ac7996bb7529b11',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => 'bfef42776f0b6ee82e71d3cba38e0dbf60f3f4c5',
-    'name' => 'wordpress/ehd',
-  ),
-  'versions' => 
-  array (
-    'wordpress/ehd' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'bfef42776f0b6ee82e71d3cba38e0dbf60f3f4c5',
+    'versions' => array(
+        'wordpress/ehd' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'aa0f3856d8e1cb793e987e711ac7996bb7529b11',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-  ),
 );

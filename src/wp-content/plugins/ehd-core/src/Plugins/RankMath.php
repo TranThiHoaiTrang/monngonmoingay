@@ -4,8 +4,6 @@ namespace EHD_Plugins;
 
 \defined( 'ABSPATH' ) || die;
 
-require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
-
 /**
  * RankMath Plugins
  *

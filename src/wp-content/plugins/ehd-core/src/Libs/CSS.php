@@ -28,7 +28,7 @@ final class CSS {
 	protected string $_selector_output = ''; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 
 	/**
-	 * Stores all the rules that will be added to the selector
+	 * Stores all of the rules that will be added to the selector
 	 *
 	 * @access protected
 	 * @var string
@@ -36,7 +36,7 @@ final class CSS {
 	protected string $_css = ''; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 
 	/**
-	 * The string that holds all the css to output
+	 * The string that holds all of the css to output
 	 *
 	 * @access protected
 	 * @var string
@@ -51,7 +51,7 @@ final class CSS {
 	protected $_media_query = null; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 
 	/**
-	 * The string that holds all the css to output inside the media query
+	 * The string that holds all of the css to output inside of the media query
 	 *
 	 * @access protected
 	 * @var string

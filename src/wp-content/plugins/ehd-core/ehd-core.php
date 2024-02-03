@@ -3,8 +3,8 @@
  * Plugin Name: eHD Core
  * Plugin URI: https://webhd.vn
  * Description: Core plugin for EHD Theme
- * Version: 0.24.02
- * Requires PHP: 8.2
+ * Version: 0.23.06
+ * Requires PHP: 7.4
  * Author: eHD Team
  * Author URI: https://webhd.vn
  * Text Domain: ehd-core
@@ -18,7 +18,6 @@ use EHD_Base\Plugin;
 
 $default_headers = [
 	'Name'       => 'Plugin Name',
-	'URI'        => 'Plugin URI',
 	'Version'    => 'Version',
 	'TextDomain' => 'Text Domain',
 	'Author'     => 'Author',

@@ -12,9 +12,6 @@ namespace EHD_Plugins\Editor;
 final class TinyMCE {
 	public function __construct() {
 
-		/** Custom styles. */
-		add_editor_style( EHD_PLUGIN_URL . "assets/css/editor-style.css" );
-
 		add_filter( 'mce_buttons', [ &$this, 'tinymce_add_table_button' ] );
 		add_filter( 'mce_external_plugins', [ &$this, 'tinymce_add_table_plugin' ] );
 	}
@@ -28,8 +25,6 @@ final class TinyMCE {
 		array_push( $buttons, 'separator', 'table' );
 		array_push( $buttons, 'separator', 'codesample' );
 		array_push( $buttons, 'separator', 'toc' );
-		//array_push( $buttons, 'separator', 'strikethrough' );
-
 		//array_push( $buttons, 'separator', 'fullscreen' );
 
 		return $buttons;

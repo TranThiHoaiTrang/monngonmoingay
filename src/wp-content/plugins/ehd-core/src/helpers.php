@@ -32,7 +32,8 @@ if ( ! function_exists( 'sanitize_checkbox' ) ) {
 	 * @return bool
 	 */
 	function sanitize_checkbox( $checked ): bool {
-		return isset( $checked ) && true == $checked; // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison -- Intentionally loose.
+		// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison -- Intentionally loose.
+		return isset( $checked ) && true == $checked;
 	}
 }
 
@@ -58,7 +59,7 @@ if ( ! function_exists( 'sanitize_image' ) ) {
 			'svg'          => 'image/svg+xml',
 		];
 
-		// check file type from file name
+		//check file type from file name
 		$file_ext = wp_check_filetype( $file, $mimes );
 
 		// if file has a valid mime type return it, otherwise return default
