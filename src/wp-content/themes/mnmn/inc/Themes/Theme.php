@@ -190,11 +190,14 @@ final class Theme {
 	public function wp_enqueue_scripts(): void {
 
 		/** Stylesheet */
-		wp_register_style( "plugin-style", get_template_directory_uri() . '/assets/css/plugins.css', [], EHD_THEME_VERSION );
-		wp_enqueue_style( "app-style", get_template_directory_uri() . '/assets/css/app.css', [ "ehd-core-style", "plugin-style" ], EHD_THEME_VERSION );
+		wp_register_style( "main-style", get_template_directory_uri() . '/assets/css/main.css', [], EHD_THEME_VERSION );
+		wp_enqueue_style( "app-style", get_template_directory_uri() . '/assets/css/app.css', [ "ehd-core-style", "main-style" ], EHD_THEME_VERSION );
+		wp_enqueue_style( "trang-style", get_template_directory_uri() . '/assets/css/trang.css', [ "ehd-core-style", "main-style" ], EHD_THEME_VERSION );
 
 		/** Scripts */
+		wp_enqueue_script( "main", get_template_directory_uri() . "/assets/js/main.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
 		wp_enqueue_script( "app", get_template_directory_uri() . "/assets/js/app.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
+		wp_enqueue_script( "app", get_template_directory_uri() . "/assets/js/trang.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
 		wp_script_add_data( "app", "defer", true );
 
 		/** Extra scripts */
