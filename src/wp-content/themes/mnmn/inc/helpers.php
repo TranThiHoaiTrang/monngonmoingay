@@ -46,10 +46,10 @@ if ( ! function_exists( 'ehd_pagination_links' ) ) {
 
 			$paginate_links = str_replace( "<ul class='page-numbers'>", '<ul class="pagination">', $paginate_links );
 			$paginate_links = str_replace( '<li><span class="page-numbers dots">&hellip;</span></li>', '<li class="ellipsis"></li>', $paginate_links );
-			$paginate_links = str_replace( '<li><span aria-current="page" class="page-numbers current">', '<li class="current"><span aria-current="page" class="show-for-sr">You\'re on page </span>', $paginate_links );
+			$paginate_links = str_replace( '<li><span aria-current="page" class="page-numbers current">', '<li class="current">', $paginate_links );
 			$paginate_links = str_replace( '</span></li>', '</li>', $paginate_links );
 			$paginate_links = preg_replace( '/\s*page-numbers\s*/', '', $paginate_links );
-			$paginate_links = preg_replace( '/\s*class=""/', '', $paginate_links );
+			$paginate_links = preg_replace( '/\s*class="page"/', '', $paginate_links );
 
 			// Display the pagination if more than one page is found.
 			if ( $paginate_links ) {

@@ -876,7 +876,7 @@ trait Wp {
 	 *
 	 * @return string|null
 	 */
-	public static function acfTermThumb( $term, $acf_field_name = null, string $size = "thumbnail", bool $img_wrap = false ): ?string {
+	public static function acfTermThumb( $term, $acf_field_name = null, string $size = "thumbnail", bool $img_wrap = false, $attr = '' ): ?string {
 		if ( is_numeric( $term ) ) {
 			$term = get_term( $term );
 		}
@@ -886,7 +886,7 @@ trait Wp {
 			if ( $attach_id ) {
 				$img_src = wp_get_attachment_image_url( $attach_id, $size );
 				if ( $img_wrap ) {
-					$img_src = wp_get_attachment_image( $attach_id, $size );
+					$img_src = wp_get_attachment_image( $attach_id, $size, false, $attr );
 				}
 
 				return $img_src;

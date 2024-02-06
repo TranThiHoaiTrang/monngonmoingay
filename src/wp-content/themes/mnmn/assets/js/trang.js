@@ -1,0 +1,1 @@
+$(".testinput").on("keyup",(function(){console.log($(location).attr("href"));var t=parseInt(this.max),n=parseInt(this.min);parseInt(this.value)>t&&(this.value=t),parseInt(this.value)<n&&(this.value=n)})),$(document).ready((function(){$(".select_col_post").on("change",(function(){var t=$(".slug_post").val()+"/page/"+$(this).val()+"/";window.location=t}))}));

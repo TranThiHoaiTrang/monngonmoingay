@@ -197,7 +197,7 @@ final class Theme {
 		/** Scripts */
 		wp_enqueue_script( "main", get_template_directory_uri() . "/assets/js/main.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
 		wp_enqueue_script( "app", get_template_directory_uri() . "/assets/js/app.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
-		wp_enqueue_script( "app", get_template_directory_uri() . "/assets/js/trang.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
+		wp_enqueue_script( "trang", get_template_directory_uri() . "/assets/js/trang.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
 		wp_script_add_data( "app", "defer", true );
 
 		/** Extra scripts */

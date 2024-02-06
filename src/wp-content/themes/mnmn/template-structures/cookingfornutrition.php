@@ -54,11 +54,9 @@ if ( ! function_exists( '__ehd_cookingfornutrition' ) ) {
     function __ehd_cookingfornutrition_post() {
         $temps = get_queried_object();
         $parents = get_field('repeater_post',$temps->ID);
-//        dump($parents);
         if (!empty($parents)){
             foreach ($parents as $parent){
                 $taxonamies = get_term($parent['chuyen_muc']);
-//                dump($taxonamies);
 
                 ?>
                 <div class="container flex flex-col gap-10 mb-20">
@@ -73,11 +71,9 @@ if ( ! function_exists( '__ehd_cookingfornutrition' ) ) {
                             if ( is_wp_error( $post ) ) {
                                 break;
                             }
-//                            dump($post->posts);
                             if(!empty($post->posts)){
                             foreach ($post->posts as $v){
                                 $image = Helper::postImageSrc($v, 'full');
-//                                dump();
                             ?>
                             <div class="p-10 rounded-2xl border-solid border-2 border-[var(--Gray-03)] w-[calc(100% - 20px)]">
                                 <div class="flex flex-col w-full">

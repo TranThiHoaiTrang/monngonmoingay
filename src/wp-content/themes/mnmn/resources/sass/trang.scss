@@ -1,0 +1,22 @@
+.pagination{
+  .page{
+    padding: 0;
+    span, a{
+      display: flex;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.seasoning_shelf--item{
+  .wp-post-image{
+    max-width: 218px;
+    max-height: 218px;
+    object-fit: scale-down;
+  }
+}
+.tab {
+  .icon{
+    display: flex;
+  }
+}

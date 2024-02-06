@@ -4571,7 +4571,7 @@ function paginate_links( $args = '' ) {
 	for ( $n = 1; $n <= $total; $n++ ) :
 		if ( $n == $current ) :
 			$page_links[] = sprintf(
-				'<span aria-current="%s" class="page-numbers current">%s</span>',
+				'<span aria-current="%s" class="page-numbers page-active">%s</span>',
 				esc_attr( $args['aria_current'] ),
 				$args['before_page_number'] . number_format_i18n( $n ) . $args['after_page_number']
 			);
@@ -4623,8 +4623,8 @@ function paginate_links( $args = '' ) {
 			return $page_links;
 
 		case 'list':
-			$r .= "<ul class='page-numbers'>\n\t<li>";
-			$r .= implode( "</li>\n\t<li>", $page_links );
+			$r .= "<ul class='page-numbers'>\n\t<li class='page'>";
+			$r .= implode( "</li>\n\t<li class='page'>", $page_links );
 			$r .= "</li>\n</ul>\n";
 			break;
 
