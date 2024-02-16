@@ -5,4 +5,6 @@ import "../../../../../../html/dist/assets/banner";
 import "../../../../../../html/dist/assets/helper";
 import "../../../../../../html/dist/assets/slider";
 import "../../../../../../html/dist/assets/menu";
+import "../../../../../../html/dist/assets/broadcast";
+import "../../../../../../html/dist/assets/seasonings_master";
 import "../../../../../../html/dist/assets/main2";

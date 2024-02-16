@@ -20,3 +20,26 @@ $(document).ready(function() {
 
     });
 });
+$(document).ready(function() {
+    const firstChild = $('.all_grid_lichphatsong').children().first();
+    firstChild.addClass('bg-[var(--Primary-04)]')
+});
+$(document).ready(function() {
+    // Bắt sự kiện khi nút được click
+    $('[data-target]').on('click', function() {
+        // Lấy giá trị của thuộc tính data-target
+        var target = $(this).data('target');
+        console.log(target);
+        // Hiển thị phần tử mục tiêu
+        $('#' + target).show();
+        $('#' + target).addClass('show');
+
+        $('.close-model').on('click', function() {
+
+            $('#' + target).hide();
+            $('#' + target).removeClass('show');
+        });
+    });
+
+
+});
