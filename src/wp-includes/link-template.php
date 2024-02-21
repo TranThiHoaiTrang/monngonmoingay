@@ -2959,13 +2959,13 @@ function get_the_posts_pagination( $args = array() ) {
 		 *     @type string $class              Custom class for the nav element. Default 'pagination'.
 		 * }
 		 */
+
 		$args = apply_filters( 'the_posts_pagination_args', $args );
 
 		// Make sure we get a string back. Plain is the next best thing.
 		if ( isset( $args['type'] ) && 'array' === $args['type'] ) {
 			$args['type'] = 'plain';
 		}
-
 		// Set up paginated links.
 		$links = paginate_links( $args );
 

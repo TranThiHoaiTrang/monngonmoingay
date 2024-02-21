@@ -19,9 +19,9 @@
  * @package WordPress
  */
 
- if ( !empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' ) {
- 	$_SERVER['HTTPS'] = 'on';
- }
+if ( !empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' ) {
+	$_SERVER['HTTPS'] = 'on';
+}
 
 /** PHP Memory */
 const WP_MEMORY_LIMIT = '512M';
@@ -31,8 +31,8 @@ const DISALLOW_FILE_EDIT = false;
 const DISALLOW_FILE_MODS = false;
 
 /* SSL */
- const FORCE_SSL_LOGIN = true;
- const FORCE_SSL_ADMIN = true;
+const FORCE_SSL_LOGIN = true;
+const FORCE_SSL_ADMIN = true;
 
 const WP_POST_REVISIONS = 1;
 const EMPTY_TRASH_DAYS = 5;
@@ -46,7 +46,7 @@ const WP_AUTO_UPDATE_CORE = false;
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-const DB_NAME = 'monanngonv1';
+const DB_NAME = 'monanngonv2';
 const DB_USER = 'root';
 const DB_PASSWORD = '';
 

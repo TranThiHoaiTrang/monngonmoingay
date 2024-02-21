@@ -8,5 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'EHD\\Widgets\\' => array($baseDir . '/inc/Widgets'),
     'EHD\\Themes\\' => array($baseDir . '/inc/Themes'),
+    'EHD\\PostTypes\\' => array($baseDir . '/inc/PostTypes'),
     'EHD\\Plugins\\' => array($baseDir . '/inc/Plugins'),
+    'EHD\\Blocks\\' => array($baseDir . '/inc/Blocks'),
 );

@@ -1,28 +1,12 @@
-$('.testinput').on('keyup', function() {
-    console.log($(location).attr('href'));
-    var max = parseInt(this.max);
-    var min = parseInt(this.min);
-    if (parseInt(this.value) > max) {
-        this.value = max;
-    }
-    if (parseInt(this.value) < min) {
-        this.value = min;
-    }
-});
-$(document).ready(function() {
-    $('.select_col_post').on('change', function() {
-        var slug_post = $('.slug_post').val();
-        var page = '/page/'
-        var trang = $(this).val() + '/';
-        var url = slug_post + page + trang;
-        // console.log(url);
-        window.location = url
+Object.assign(window, { $: jQuery, jQuery });
 
-    });
-});
 $(document).ready(function() {
-    const firstChild = $('.all_grid_lichphatsong').children().first();
-    firstChild.addClass('bg-[var(--Primary-04)]')
+    $('.grid_lichphatsong').find('.btn-default').addClass('btn-secondary');
+    const firstChild = $('.all_grid_lichphatsong').children('.grid_lichphatsong').first();
+    firstChild.addClass('bg-[var(--Primary-04)]');
+    firstChild.find('.btn-default').removeClass('btn-secondary');
+    firstChild.find('.btn-default').addClass('btn-primary');
+
 });
 $(document).ready(function() {
     // Bắt sự kiện khi nút được click

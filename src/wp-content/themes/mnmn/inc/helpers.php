@@ -37,19 +37,20 @@ if ( ! function_exists( 'ehd_pagination_links' ) ) {
 						'end_size'  => 3,
 						'mid_size'  => 3,
 						'prev_next' => true,
-						'prev_text' => '<i data-glyph=""></i>',
-						'next_text' => '<i data-glyph=""></i>',
+						'prev_text' => '<span class="icon icon-[fe--arrow-left]"></span>',
+						'next_text' => '<span class="icon icon-[fe--arrow-right]"></span>',
 						'type'      => 'list',
 					]
 				)
 			);
 
 			$paginate_links = str_replace( "<ul class='page-numbers'>", '<ul class="pagination">', $paginate_links );
-			$paginate_links = str_replace( '<li><span class="page-numbers dots">&hellip;</span></li>', '<li class="ellipsis"></li>', $paginate_links );
-			$paginate_links = str_replace( '<li><span aria-current="page" class="page-numbers current">', '<li class="current">', $paginate_links );
-			$paginate_links = str_replace( '</span></li>', '</li>', $paginate_links );
-			$paginate_links = preg_replace( '/\s*page-numbers\s*/', '', $paginate_links );
-			$paginate_links = preg_replace( '/\s*class="page"/', '', $paginate_links );
+			$paginate_links = str_replace( '<li><span class="page-numbers dots">&hellip;</span></li>', '<li class="page page-dot"><span>•••</span></li>', $paginate_links );
+			$paginate_links = str_replace( '<li><span aria-current="page" class="page-numbers current">', '<li class="page page-active current"><span aria-current="page" class="page-numbers current">', $paginate_links );
+			$paginate_links = str_replace( '<li>', '<li class="page">', $paginate_links );
+			//$paginate_links = str_replace( '</span></li>', '</li>', $paginate_links );
+			//$paginate_links = preg_replace( '/\s*page-numbers\s*/', '', $paginate_links );
+			//$paginate_links = preg_replace( '/\s*class="page"/', '', $paginate_links );
 
 			// Display the pagination if more than one page is found.
 			if ( $paginate_links ) {
@@ -126,3 +127,25 @@ if ( ! function_exists( 'ehd_post_comment' ) ) {
 /** ---------------------------------------- */
 /** MNMN */
 /** ---------------------------------------- */
+
+if ( ! function_exists( 'social_nav' ) ) {
+
+	/**
+	 * @param string $location
+	 * @param string $menu_class
+	 *
+	 * @return bool|string
+	 */
+	function social_nav( string $location = 'social-nav', string $menu_class = 'social-menu menu' ): bool|string {
+		return wp_nav_menu( [
+			'container'      => false,
+			'theme_location' => $location,
+			'menu_class'     => $menu_class,
+			'depth'          => 1,
+			'link_before'    => '<span class="text">',
+			'link_after'     => '</span>',
+			'fallback_cb'    => false,
+			'echo'           => false,
+		] );
+	}
+}

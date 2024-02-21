@@ -4,6 +4,20 @@
 //
 // theme color
 //
+$Primary-01: #330002;
+$Primary-02: #ec2028;
+$Primary-03: #fbd0d2;
+$Primary-04: #fef6f6;
+
+$Secondary-01: #331f00;
+$Secondary-02: #ec9a20;
+$Secondary-03: #fbead0;
+$Secondary-04: #fefbf6;
+
+$Gray-01: #0a0a0a;
+$Gray-02: #666666;
+$Gray-03: #f0f0f0;
+$Gray-04: #fafafa;
 
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
@@ -36,7 +50,7 @@ $color-contrast-light:     $white !default;
 //
 // Settings for the `<body>` element.
 
-$body-color: $black !default;
+$body-color: #0a0a0a !default;
 $body-bg:    $white !default;
 
 $body-size: 16px !default;
@@ -45,7 +59,7 @@ $body-size: 16px !default;
 //
 // Style anchor elements.
 
-$link-color:               $primary !default;
+$link-color:               #0a0a0a !default;
 $link-decoration:          underline !default;
 $link-hover-color:         shift-color($link-color, 20%) !default;
 $link-hover-decoration:    null !default;
@@ -64,7 +78,7 @@ $paragraph-margin-bottom: 15px !default;
 $xs:   0;
 $sm:   576px;
 $md:   768px;
-$lg:   992px;
+$lg:   1024px;
 $xl:   1200px;
 $xxl:  1400px;
 $xxxl: 1880px;
@@ -156,6 +170,6 @@ $spacers: (
 $scrollbar-w: 4px !default;
 $scrollbar-h: 4px !default;
 
-$header-font: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', Arial, cursive, sans-serif;
-$body-font: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', Arial, cursive, sans-serif;
+$header-font: "Open Sans", -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', Arial, cursive, sans-serif;
+$body-font: "Open Sans", -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', Arial, cursive, sans-serif;
 $awesome-font: "Font Awesome 6 Pro", "Font Awesome 6 Brands", "Font Awesome 6 Free", sans-serif;

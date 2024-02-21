@@ -218,13 +218,13 @@
         width: fs($width);
     }
 
-    & > img {
+    & > img:first-child {
         display: block;
         @include absolute-center;
     }
 
     &:not(.auto) {
-        & > img {
+        & > img:first-child {
             height: 100% !important;
             width: 100%;
             max-width: unset;

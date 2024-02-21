@@ -162,7 +162,6 @@ final class Theme {
 	 */
 	public function unregister_widgets(): void {}
 
-
 	/** ---------------------------------------- */
 
 	/**
@@ -190,14 +189,16 @@ final class Theme {
 	public function wp_enqueue_scripts(): void {
 
 		/** Stylesheet */
-		wp_register_style( "main-style", get_template_directory_uri() . '/assets/css/main.css', [], EHD_THEME_VERSION );
-		wp_enqueue_style( "app-style", get_template_directory_uri() . '/assets/css/app.css', [ "ehd-core-style", "main-style" ], EHD_THEME_VERSION );
-		wp_enqueue_style( "trang-style", get_template_directory_uri() . '/assets/css/trang.css', [ "ehd-core-style", "main-style" ], EHD_THEME_VERSION );
+		wp_register_style( "dist-style", get_template_directory_uri() . '/assets/css/dist.css', [ "ehd-core-style" ], EHD_THEME_VERSION );
+		wp_enqueue_style( "trang-style", get_template_directory_uri() . '/assets/css/trang.css', [ "dist-style" ], EHD_THEME_VERSION );
+		wp_enqueue_style( "app-style", get_template_directory_uri() . '/assets/css/app.css', [ "dist-style" ], EHD_THEME_VERSION );
 
 		/** Scripts */
-		wp_enqueue_script( "main", get_template_directory_uri() . "/assets/js/main.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
-		wp_enqueue_script( "app", get_template_directory_uri() . "/assets/js/app.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
-		wp_enqueue_script( "trang", get_template_directory_uri() . "/assets/js/trang.js", [ "ehd-core" ], EHD_THEME_VERSION, true );
+		wp_register_script( "dist", get_template_directory_uri() . "/assets/js/dist.js", [ "jquery-core" ], EHD_THEME_VERSION, true );
+		wp_enqueue_script( "trang", get_template_directory_uri() . "/assets/js/trang.js", [ "ehd-core", "dist"  ], EHD_THEME_VERSION, true );
+		wp_enqueue_script( "app", get_template_directory_uri() . "/assets/js/app.js", [ "ehd-core", "dist" ], EHD_THEME_VERSION, true );
+
+		wp_script_add_data( "dist", "defer", true );
 		wp_script_add_data( "app", "defer", true );
 
 		/** Extra scripts */

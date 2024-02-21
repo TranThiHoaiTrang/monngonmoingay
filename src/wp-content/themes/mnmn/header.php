@@ -28,12 +28,11 @@ use EHD_Cores\Helper;
 
     /**
      * @see __ehd_skip_to_content_link - 2
-     * @see __off_canvas_menu - 10
      */
     do_action( 'ehd_before_header' );
 
     ?>
-    <div class="site-outer">
+    <div class="wrapper pt-16 lg:pt-24">
         <?php
 
         /**
@@ -44,15 +43,5 @@ use EHD_Cores\Helper;
         do_action( 'ehd_after_header' );
 
         ?>
-        <div class="site-page">
-	        <?php
-
-	        do_action( 'ehd_inside_site_page' );
-
-	        ?>
-            <div class="site-content">
-                <?php
-
-                do_action( 'ehd_inside_site_content' );
-
+        <div id="site-content">
 

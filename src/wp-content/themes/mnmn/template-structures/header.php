@@ -45,7 +45,7 @@ if ( ! function_exists( '__ehd_skip_to_content_link' ) ) {
 	//add_action( 'ehd_before_header', '__ehd_skip_to_content_link', 2 );
 
 	/**
-	 * Add skip to content link before the header.
+	 * Add skip to a content link before the header.
 	 *
 	 * @return void
 	 */
@@ -55,28 +55,6 @@ if ( ! function_exists( '__ehd_skip_to_content_link' ) ) {
 			esc_attr__( 'Skip to content', EHD_TEXT_DOMAIN ),
 			esc_html__( 'Skip to content', EHD_TEXT_DOMAIN )
 		);
-	}
-}
-
-if ( ! function_exists( '__off_canvas_menu' ) ) {
-	add_action( 'ehd_before_header', '__off_canvas_menu', 10 );
-
-	/**
-	 * Position canvas menu
-	 *
-	 * @return void
-	 */
-	function __off_canvas_menu(): void {
-
-		$position = Helper::getThemeMod( 'offcanvas_menu_setting' );
-		if ( ! in_array( $position, [ 'left', 'right', 'top', 'bottom' ] ) ) {
-			$position = 'right';
-		}
-
-		// Check if offCanvas_Widget active
-		if ( is_active_widget( false, false, 'w-offcanvas', true ) ) {
-			get_template_part( 'template-parts/header/off-canvas/' . $position );
-		}
 	}
 }
 
@@ -92,7 +70,7 @@ if ( ! function_exists( '__ehd_construct_header' ) ) {
 	 */
 	function __ehd_construct_header(): void {
 		?>
-		<header id="masthead" class="site-header" <?php echo Helper::microdata( 'header' ); ?>>
+		<header id="header" class="py-2 px-4 lg:py-4 lg:px-6 flex gap-6 items-center justify-start fixed inset-x-0 top-0 z-10" <?php echo Helper::microdata( 'header' ); ?>>
             <?php
 
             /**
@@ -114,31 +92,7 @@ if ( ! function_exists( '__top_header' ) ) {
 	/**
 	 * @return void
 	 */
-	function __top_header(): void {
-		$top_header_cols      = (int) Helper::getThemeMod( 'top_header_setting' );
-		$top_header_container = Helper::getThemeMod( 'top_header_container_setting' );
-
-		if ( $top_header_cols > 0 ) :
-
-        ?>
-        <div class="top-header" id="top-header">
-	        <?php
-	        if ( $top_header_container ) echo '<div class="grid-container">';
-	        else echo '<div class="grid-container fluid">';
-
-		    for ( $i = 1; $i <= $top_header_cols; $i++ ) :
-			    if ( is_active_sidebar( 'ehd-top-header-' . $i . '-sidebar' )) :
-				    echo '<div class="cell cell-' . $i . '">';
-				    dynamic_sidebar( 'ehd-top-header-' . $i . '-sidebar' );
-				    echo '</div>';
-			    endif;
-            endfor;
-
-            echo '</div>';
-            ?>
-        </div>
-    <?php endif;
-	}
+	function __top_header(): void {}
 }
 
 if ( ! function_exists( '__header' ) ) {
@@ -148,29 +102,21 @@ if ( ! function_exists( '__header' ) ) {
 	 * @return void
 	 */
 	function __header(): void {
-		$header_cols = (int) Helper::getThemeMod( 'header_setting' );
-		$header_container = Helper::getThemeMod( 'header_container_setting' );
 
-		if ( $header_cols > 0 ) :
+        Helper::siteTitleOrLogo( true, 'div', 'p-1 bg-white rounded-[10px]');
+
+		get_template_part( 'template-parts/blocks/off_canvas' );
 
         ?>
-        <div class="inside-header" id="inside-header">
-	        <?php
-	        if ( $header_container ) echo '<div class="grid-container">';
-	        else echo '<div class="grid-container fluid">';
 
-	        for ( $i = 1; $i <= $header_cols; $i++ ) :
-		        if ( is_active_sidebar( 'ehd-header-' . $i . '-sidebar' )) :
-			        echo '<div class="cell cell-' . $i . '">';
-			        dynamic_sidebar( 'ehd-header-' . $i . '-sidebar' );
-			        echo '</div>';
-		        endif;
-	        endfor;
+        <div class="nav-wrap flex lg:justify-start lg:items-center flex-auto fixed lg:static top-0 right-0 flex-col lg:flex-row h-screen lg:h-auto w-screen lg:w-auto justify-between pointer-events-none lg:pointer-events-auto">
+            <div class="menu-bg absolute inset-0 w-screen h-screen bg-[var(--Gray-01)] opacity-0 lg:hidden transition-all"></div>
 
-            echo '</div>';
-            ?>
+            <?php get_template_part( 'template-parts/blocks/main_nav' ); ?>
+            <?php get_template_part( 'template-parts/blocks/users' ); ?>
+
         </div>
-    <?php endif;
+    <?php
 	}
 }
 
@@ -180,31 +126,5 @@ if ( ! function_exists( '__bottom_header' ) ) {
 	/**
 	 * @return void
 	 */
-	function __bottom_header(): void {
-		$bottom_header_cols      = (int) Helper::getThemeMod( 'bottom_header_setting' );
-		$bottom_header_container = Helper::getThemeMod( 'bottom_header_container_setting' );
-
-		if ( $bottom_header_cols > 0 ) :
-
-        ?>
-        <div class="bottom-header header-content" id="bottom-header">
-            <?php
-            if ( $bottom_header_container ) echo '<div class="grid-container">';
-            else echo '<div class="grid-container fluid">';
-
-            for ( $i = 1; $i <= $bottom_header_cols; $i++ ) :
-	            if ( is_active_sidebar( 'ehd-bottom-header-' . $i . '-sidebar' )) :
-		            echo '<div class="cell cell-' . $i . '">';
-		            dynamic_sidebar( 'ehd-bottom-header-' . $i . '-sidebar' );
-		            echo '</div>';
-	            endif;
-            endfor;
-
-            echo '</div>';
-            ?>
-        </div>
-    <?php endif;
-	}
+	function __bottom_header(): void {}
 }
-
-

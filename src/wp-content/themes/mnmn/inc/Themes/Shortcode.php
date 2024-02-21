@@ -2,6 +2,8 @@
 
 namespace EHD\Themes;
 
+use EHD_Cores\Helper;
+
 \defined( 'ABSPATH' ) || die;
 
 final class Shortcode {
@@ -10,7 +12,7 @@ final class Shortcode {
 	 */
 	public static function init(): void {
 		$shortcodes = [
-			'demo_shortcode' => __CLASS__ . '::demo_shortcode',
+			'main_nav' => __CLASS__ . '::main_nav',
 		];
 
 		foreach ( $shortcodes as $shortcode => $function ) {
@@ -23,21 +25,41 @@ final class Shortcode {
 	/**
 	 * @param array $atts
 	 *
-	 * @return false|string
+	 * @return string
 	 */
-	public static function demo_shortcode( array $atts = [] ): false|string {
-		$default_atts = [];
-		$atts         = shortcode_atts(
-			$default_atts,
+	public static function main_nav( array $atts = [] ): string {
+		$atts = shortcode_atts(
+			[
+				'location' => 'main-nav',
+				'class'    => 'flex items-start lg:items-center flex-col lg:flex-row gap-1 lg:gap-0',
+				'id'       => esc_attr( uniqid( 'menu-' ) ),
+				'depth'    => 4,
+				'items_wrap' => '<ul role="menubar" id="%1$s" class="%2$s">%3$s</ul>',
+			],
 			$atts,
-			'demo_shortcode'
+			'main_nav'
 		);
 
-		ob_start();
+		$location = $atts['location'] ?: 'main-nav';
+		$class    = $atts['class'] ?: '';
+		$depth    = $atts['depth'] ? absint( $atts['depth'] ) : 1;
+		$id       = $atts['id'] ?: esc_attr( uniqid( 'menu-' ) );
+		$items_wrap = $atts['items_wrap'] ?: '<ul role="menubar" id="%1$s" class="%2$s">%3$s</ul>';
 
-		//...
-		echo 'demo_shortcode';
-
-		return ob_get_clean();
+		return Helper::horizontalNav( [
+			'menu_id'        => $id,
+			'menu_class'     => $class,
+			'theme_location' => $location,
+			'depth'          => $depth,
+			'items_wrap' => $items_wrap,
+			'echo'           => false,
+		] );
 	}
+
+	// ------------------------------------------------------
+
+
+
+	// ------------------------------------------------------
+
 }

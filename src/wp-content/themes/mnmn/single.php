@@ -10,6 +10,6 @@
 
 get_header();
 
-echo 'single posts';
+the_content();
 
 get_footer();

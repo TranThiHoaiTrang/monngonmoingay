@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    let smooth_scroll_back_to_top = false;
+    let smooth_scroll_back_to_top = true;
 
     // Feature Test
     if ('querySelector' in document && 'addEventListener' in window) {

@@ -5,17 +5,9 @@
 
 # Node artifact files
 node_modules/
-dist/
-
-# Compiled Java class files
-*.class
-
-# Compiled Python bytecode
-*.py[cod]
 
 # ignore log files and databases
 *.log
-*.sql
 *.sqlite
 
 # Package files
@@ -23,9 +15,6 @@ dist/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
-
-# Maven
-target/
 
 # JetBrains IDE
 .idea/
@@ -50,45 +39,42 @@ Thumbs.db
 
 # Large media files
 *.mp4
-*.tiff
+#*.tiff
 *.avi
 *.flv
 *.mov
 *.wmv
 
 # WordPress template
-# ignore everything in the "wp-content" directory, except:
-# "mu-plugins", "plugins", "themes" directory
-wp-content/*
-!wp-content/mu-plugins/
-!wp-content/plugins/
-!wp-content/themes/
+wp-content/uploads/
+#wp-content/upgrade-temp-backup/
+#wp-content/upgrade/
 
 # ignore these plugins
 wp-content/plugins/hello.php
 
 # ignore specific themes
-wp-content/themes/twenty*/
+#wp-content/themes/twenty*/
 
 # Project exclude paths
-/wp-content/themes/ehd/vendor/
-/wp-content/themes/ehd/composer.lock
-/wp-content/themes/ehd/package-lock.json
-/wp-content/themes/ehd/yarn.lock
-/wp-content/themes/ehd/assets/
+#wp-content/themes/mnmn/vendor/
+wp-content/themes/mnmn/composer.lock
+wp-content/themes/mnmn/package-lock.json
+wp-content/themes/mnmn/yarn.lock
+#wp-content/themes/mnmn/assets/
 
-/yarn.lock
-/mix-manifest.json
-/package-lock.json
-/vendor/
-/composer.lock
+yarn.lock
+mix-manifest.json
+package-lock.json
+#vendor/
+composer.lock
 
-/wp-content/plugins/ehd-core/assets/
-/wp-content/plugins/ehd-core/vendor/
+#wp-content/plugins/ehd-core/assets/
+#wp-content/plugins/ehd-core/vendor/
 
-/wp-content/mu-plugins/composer.lock
-/wp-content/mu-plugins/vendor/
+wp-content/mu-plugins/composer.lock
+#wp-content/mu-plugins/vendor/
 
 #
-/admin_monngon.sql.zip
-/monngonmoingay.com.zip
+admin_monngon.sql.zip
+monngonmoingay.com.zip

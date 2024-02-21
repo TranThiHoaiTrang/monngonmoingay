@@ -172,6 +172,52 @@ if ( ! function_exists( '__register_sidebars' ) ) {
 
 			register_sidebar( $args + $footer_tags );
 		}
+
+		//----------------------------------------------------------
+		// Other ...
+		//----------------------------------------------------------
+
+		// Top footer
+		register_sidebar(
+			[
+				'container'     => false,
+				'id'            => 'ehd-top-footer-sidebar',
+				'name'          => __( 'Top-Footer', EHD_TEXT_DOMAIN ),
+				'description'   => __( 'Widgets added here will appear in top footer.', EHD_TEXT_DOMAIN ),
+				'before_widget' => '<div class="%2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span>',
+				'after_title'   => '</span>',
+			]
+		);
+
+		// Top page
+		register_sidebar(
+			[
+				'container'     => false,
+				'id'            => 'ehd-top-page-sidebar',
+				'name'          => __( 'Top-Page', EHD_TEXT_DOMAIN ),
+				'description'   => __( 'Widgets added here will appear in top page.', EHD_TEXT_DOMAIN ),
+				'before_widget' => '<div class="%2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span>',
+				'after_title'   => '</span>',
+			]
+		);
+
+		// Top page
+		register_sidebar(
+			[
+				'container'     => false,
+				'id'            => 'ehd-menu-page-monan',
+				'name'          => __( 'Menu-Page-Monan', EHD_TEXT_DOMAIN ),
+				'description'   => __( 'Widgets added here will appear in menu page monan.', EHD_TEXT_DOMAIN ),
+				'before_widget' => '<div class="%2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span>',
+				'after_title'   => '</span>',
+			]
+		);
 	}
 }
 
@@ -247,9 +293,9 @@ if ( ! function_exists( '__post_classes' ) ) {
 	add_filter( 'post_class', '__post_classes', 11, 1 );
 
 	/**
-	 * Adds custom classes to the array of post classes.
+	 * Adds custom classes to the array of post-classes.
 	 *
-	 * @param array $classes Classes for the post element.
+	 * @param array $classes Classes for the post-element.
 	 *
 	 * @return array
 	 */
@@ -359,7 +405,6 @@ add_filter( 'ehd_defer_script', function ( array $arr ) {
 		// defer script
 		//'wc-single-product' => 'defer',
 		'contact-form-7' => 'defer',
-		//'video-js'       => 'defer',
 
 		// delay script - default 5s
 		'comment-reply' => 'delay',
@@ -413,17 +458,17 @@ add_filter( 'ehd_aspect_ratio_post_type', function ( array $arr ) {
 	// custom value
 	$update_arr = [
 		//'hoi-dau-bep',
-		'lich-phat-song',
+		//'lich-phat-song',
 		//'dipnau',
-		'nuoccham',
+		//'nuoccham',
 		//'nguyenlieu',
-		'gia-vi-ban-can',
+		//'gia-vi-ban-can',
 		'thong-tin-huu-ich',
 		'monan',
-		'cachnau',
-		'ebooklet',
-		'giadinh',
-		'dinhduong'
+		//'cachnau',
+		//'ebooklet',
+		//'giadinh',
+		//'dinhduong'
 	];
 
 	return array_merge( $arr, $update_arr );
@@ -432,7 +477,7 @@ add_filter( 'ehd_aspect_ratio_post_type', function ( array $arr ) {
 
 /** ---------------------------------------- */
 
-// Terms thumbnail + order ( term_thumb + term_order )
+// Terms thumbnail ( term_thumb )
 add_filter( 'ehd_term_columns', function ( array $arr ) {
 
 	$update_arr = [
@@ -446,6 +491,7 @@ add_filter( 'ehd_term_columns', function ( array $arr ) {
 		'danh-muc-thong-tin-huu-ich',
 		'danhmuc_dipnau',
 		'danhmuc_monan',
+		'danh-muc-gioi-thieu',
 	];
 
 	return array_merge( $arr, $update_arr );
@@ -460,6 +506,8 @@ add_filter( 'ehd_term_row_actions', function ( array $arr ) {
 	$update_arr = [
 		'category',
 		'post_tag',
+		'danh_muc_gia_vi_ban_can',
+		'danhmuc_monan',
 	];
 
 	$new_arr = array_merge( $arr, $update_arr );
@@ -514,7 +562,7 @@ add_filter( 'ehd_post_exclude_columns', function ( array $arr ) {
 add_filter( 'ehd_location_menu_items', function ( array $arr ) {
 
 	$update_arr = [
-		'main-nav',
+		//'main-nav',
 		//'second-nav',
 		//'mobile-nav',
 	];
@@ -529,7 +577,7 @@ add_filter( 'ehd_location_menu_items', function ( array $arr ) {
 add_filter( 'ehd_location_mega_menu', function ( array $arr ) {
 
 	$update_arr = [
-		'main-nav',
+		//'main-nav',
 		//'second-nav',
 		//'mobile-nav',
 	];
@@ -541,3 +589,47 @@ add_filter( 'ehd_location_mega_menu', function ( array $arr ) {
 /** ---------------------------------------- */
 /** MNMN */
 /** ---------------------------------------- */
+
+add_filter( 'ehd_posts_num_per_page', function ( array $arr ) {
+	$update_arr = [ 10, 15, 20 ];
+	return array_merge( $arr, $update_arr );
+
+}, 99, 1 );
+
+/** ---------------------------------------- */
+
+add_filter( 'ehd_post_type_terms', function ( array $arr ) {
+
+	$update_arr = [
+		'nguyenlieu'        => 'danhmuc_nguyenlieu',
+		'dipnau'            => 'danhmuc_dipnau',
+		'nuoccham'          => 'danhmuc_nuoccham',
+		'gia-vi-ban-can'    => 'danh_muc_gia_vi_ban_can',
+		'thong-tin-huu-ich' => 'danh-muc-thong-tin-huu-ich',
+	];
+
+	if ( class_exists( '\WooCommerce' ) ) {
+		$update_arr = array_merge( $update_arr, [ 'product' => 'product_cat' ] );
+	}
+
+	return array_merge( $arr, $update_arr );
+}, 99, 1 );
+
+/** ---------------------------------------- */
+
+add_filter( 'ehd_search_property', function ( array $arr ) {
+	$update_arr = [
+		'nguyenlieu'     => [ 'title' => 'Nguyên liệu', 'tax' => 'danhmuc_nguyenlieu' ],
+		'cachnau'        => [ 'title' => 'Cách nấu', 'tax' => false ],
+		'dipnau'         => [ 'title' => 'Dịp lễ', 'tax' => 'danhmuc_dipnau' ],
+		'loaimon'        => [ 'title' => 'Món ăn', 'tax' => false ],
+		'giadinh'        => [ 'title' => 'Gia đình', 'tax' => false ],
+		'vungmien'       => [ 'title' => 'Vùng miền', 'tax' => false ],
+		'dinhduong'      => [ 'title' => 'Dinh dưỡng', 'tax' => false ],
+		'nuoccham'       => [ 'title' => 'Sốt/Nước chấm', 'tax' => 'danhmuc_nuoccham' ],
+		'gia-vi-ban-can' => [ 'title' => 'Sản phẩm Ajinomoto', 'tax' => 'danh_muc_gia_vi_ban_can' ],
+	];
+
+	return array_merge( $arr, $update_arr );
+
+}, 99, 1 );

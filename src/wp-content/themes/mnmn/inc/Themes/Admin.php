@@ -36,6 +36,7 @@ final class Admin {
 			'category',
 			'post_tag',
 		];
+
 		$taxonomy_arr = apply_filters( 'ehd_term_row_actions', $taxonomy_arr );
 
 		foreach ( $taxonomy_arr as $term ) {
@@ -74,6 +75,7 @@ final class Admin {
 			'category',
 			'post_tag',
 		];
+
 		$thumb_terms = apply_filters( 'ehd_term_columns', $thumb_terms );
 
 		foreach ( $thumb_terms as $term ) {
@@ -98,12 +100,12 @@ final class Admin {
 			];
 			$columns = Helper::insertBefore( 'name', $columns, $thumb );
 
-			// order
-			$menu_order = [
-				'term_order' => sprintf( '<span class="term-order tips">%1$s</span>', __( "Order", EHD_TEXT_DOMAIN ) ),
-			];
-
-			$columns = array_merge( $columns, $menu_order );
+//			// order
+//			$menu_order = [
+//				'term_order' => sprintf( '<span class="term-order tips">%1$s</span>', __( "Order", EHD_TEXT_DOMAIN ) ),
+//			];
+//
+//			$columns = array_merge( $columns, $menu_order );
 		}
 
 		return $columns;
@@ -129,15 +131,15 @@ final class Admin {
 				return $out = $term_thumb;
 				break;
 
-			case 'term_order':
-				if ( class_exists( '\ACF' ) ) {
-					$term_order = \get_field( 'term_order', get_term( $term_id ) );
-
-					return $out = $term_order ?: 0;
-				}
-
-				return $out = 0;
-				break;
+//			case 'term_order':
+//				if ( class_exists( '\ACF' ) ) {
+//					$term_order = \get_field( 'term_order', get_term( $term_id ) );
+//
+//					return $out = $term_order ?: 0;
+//				}
+//
+//				return $out = 0;
+//				break;
 
 			default:
 				return $out;

@@ -8,10 +8,10 @@ class ComposerStaticInit39562639ab5ceb96fd3c7a985c57010c
 {
     public static $files = array (
         'e25e1f6c4d570eb1dd5c8ac0e4f21252' => __DIR__ . '/../..' . '/inc/Plugins/Tgmpa/tgmpa-config.php',
-        'edadc6bf3abf3ba640f115b59bb57872' => __DIR__ . '/../..' . '/inc/ajax.php',
-        'c163c428bf74734310dfd2ee70071487' => __DIR__ . '/../..' . '/inc/css-output.php',
         '15a24e14812a947eb0b080b5e42d8e48' => __DIR__ . '/../..' . '/inc/helpers.php',
         '64ca909936ac949170971e49fcb2c1a9' => __DIR__ . '/../..' . '/inc/themes.php',
+        'edadc6bf3abf3ba640f115b59bb57872' => __DIR__ . '/../..' . '/inc/ajax.php',
+        'c163c428bf74734310dfd2ee70071487' => __DIR__ . '/../..' . '/inc/css-output.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -19,7 +19,9 @@ class ComposerStaticInit39562639ab5ceb96fd3c7a985c57010c
         array (
             'EHD\\Widgets\\' => 12,
             'EHD\\Themes\\' => 11,
+            'EHD\\PostTypes\\' => 14,
             'EHD\\Plugins\\' => 12,
+            'EHD\\Blocks\\' => 11,
         ),
     );
 
@@ -32,9 +34,17 @@ class ComposerStaticInit39562639ab5ceb96fd3c7a985c57010c
         array (
             0 => __DIR__ . '/../..' . '/inc/Themes',
         ),
+        'EHD\\PostTypes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc/PostTypes',
+        ),
         'EHD\\Plugins\\' => 
         array (
             0 => __DIR__ . '/../..' . '/inc/Plugins',
+        ),
+        'EHD\\Blocks\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc/Blocks',
         ),
     );
 

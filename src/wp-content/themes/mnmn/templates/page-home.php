@@ -1,41 +1,26 @@
 <?php
 /**
  * The template for displaying homepage
- * Template Name: Home
+ * Template Name: Home Page
  * Template Post Type: page
  */
 
 \defined( 'ABSPATH' ) || die;
 
-use EHD_Cores\Helper;
-
 get_header( 'home' );
 
-if (have_posts()) the_post();
-
-echo '<main role="main">';
+global $post;
 
 if (post_password_required()) :
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 endif;
 
-if (Helper::stripSpace($post->post_content)) {
-    echo '<section class="section homepage-section"><div class="grid-container">';
-    echo '<div class="content clearfix">';
-
-    // post content
-    the_content();
-
-    echo '</div></div>';
-    echo '</section>';
-}
+//the_content();
 
 // homepage widget
-if (is_active_sidebar('w-home-sidebar')) :
-    dynamic_sidebar('w-home-sidebar');
+if ( is_active_sidebar( 'ehd-home-sidebar' ) ) :
+	dynamic_sidebar( 'ehd-home-sidebar' );
 endif;
 
-echo '</main>';
-
-get_footer('home');
+get_footer( 'home' );
